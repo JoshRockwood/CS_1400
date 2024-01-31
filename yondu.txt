@@ -1,0 +1,23 @@
+crew_size = float(input("How many pirates:\n"))
+crew_size= crew_size - 2
+total_units = float(input("How many units:\n"))
+
+iron_lotus_deduction = crew_size * 3
+amount_after_iron_lotus = total_units - iron_lotus_deduction
+
+#round in beginning
+yondu_cut = round((amount_after_iron_lotus * 0.13), 2)
+amount_after_yondu_cut = (amount_after_iron_lotus - yondu_cut)
+
+peter_cut = round((amount_after_yondu_cut * 0.11), 2)
+amount_after_peter_cut = (amount_after_yondu_cut - peter_cut)
+
+amount_per_crew_member = amount_after_peter_cut / (crew_size + 2)
+yondu_final = amount_per_crew_member + yondu_cut
+peter_final = amount_per_crew_member + peter_cut
+crew_final = (amount_per_crew_member * crew_size + iron_lotus_deduction)/crew_size
+
+print()
+print(f"Yondu's share: {yondu_final:.2f}")
+print(f"Peter's share: {peter_final:.2f}")
+print(f"Crew's share: {crew_final:.2f}")
