@@ -82,7 +82,6 @@ def draw_triangle(number_of_triangles):
 
                 number_of_triangles_drawn = number_of_triangles_drawn + 1
 
-
 draw_circle(5)
 draw_square(5)
 draw_triangle(5)
