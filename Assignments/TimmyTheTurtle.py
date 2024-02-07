@@ -1,11 +1,17 @@
 import turtle
 import random
 
-t = turtle.Turtle()
-t.speed(0)  # 1:slowest, 3:slow, 5:normal, 10:fast, 0:fastest
 
 
-def draw_circle(number_of_circles):
+def main():
+        t = turtle.Turtle()
+        t.speed(0)  # 1:slowest, 3:slow, 5:normal, 10:fast, 0:fastest
+
+        draw_circle(5, t)
+        draw_square(5, t)
+        draw_triangle(5, t)
+
+def draw_circle(number_of_circles, t):
         # Random size of circle
         for i in range(number_of_circles):
                 #Random size of circle
@@ -28,7 +34,7 @@ def draw_circle(number_of_circles):
                 t.end_fill()
 
 
-def draw_square(number_of_squares):
+def draw_square(number_of_squares, t):
         number_of_squares_drawn = 0
         while number_of_squares_drawn < number_of_squares:
                 #Random square size
@@ -55,7 +61,7 @@ def draw_square(number_of_squares):
                 number_of_squares_drawn = number_of_squares_drawn + 1
 
 
-def draw_triangle(number_of_triangles):
+def draw_triangle(number_of_triangles, t):
         number_of_triangles_drawn = 0
         while number_of_triangles_drawn < number_of_triangles:
 
@@ -82,6 +88,5 @@ def draw_triangle(number_of_triangles):
 
                 number_of_triangles_drawn = number_of_triangles_drawn + 1
 
-draw_circle(5)
-draw_square(5)
-draw_triangle(5)
+if __name__ == "__main__":
+        main()
