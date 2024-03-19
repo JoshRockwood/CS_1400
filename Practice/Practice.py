@@ -34,6 +34,8 @@ print(newlist)
 print(newlist2)
 print(newlist3)'''
 
+###############
+
 import sys
 
 test_file = sys.argv[1]
@@ -50,6 +52,8 @@ with open(test_file, "r") as input_file:
 
 print("{} lines".format(line_count))
 print("{} characters".format(char_count))
+
+###############
 
 import sys, csv
 
@@ -71,6 +75,8 @@ with open(test_file, "r") as input_file:
         total4 += int(num4)
 
 print("{} {} {} {}".format(total1/row_count, total2/row_count, total3/row_count, total4/row_count))
+
+###############
 
 import sys
 
@@ -99,6 +105,9 @@ with open(test_file, "r") as input_file:
 print("The oldest person is {}.".format(oldest_name))
 
 
+###############
+
+
 import sys, csv
 
 test_file = sys.argv[1]
@@ -119,6 +128,10 @@ for city in cities:
     else:
         print(city + ", ")
 
+
+###############
+
+
 import csv
 
 with open("student_folder/csv/superheroes.csv", "w") as output_file:
@@ -136,3 +149,28 @@ with open("student_folder/csv/superheroes.csv", "w") as output_file:
     if name == "stop":
       break
     power = input("Enter their superpower: ")
+
+
+################
+
+def dic_gen(n):
+    d = dict()
+    for i in range(1, n+1):
+        d[i] = i * i
+    return d
+
+
+def main():
+    n = 5
+    d = dic_gen(n)
+    print(d)
+
+
+if __name__ == "__main__":
+    main()
+
+##################
+
+v = {'a': 5, 'b': (2, 3, 4), 'c': [{'d': 10, 'e': 20}]}
+# To access the value 10 need to access dictionary first
+v['c'][0]['d']
