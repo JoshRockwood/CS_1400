@@ -174,3 +174,30 @@ if __name__ == "__main__":
 v = {'a': 5, 'b': (2, 3, 4), 'c': [{'d': 10, 'e': 20}]}
 # To access the value 10 need to access dictionary first
 v['c'][0]['d']
+
+###############
+
+# WRITE YOUR CODE HERE
+
+
+# test code below
+if __name__=="__main__":
+  cities = {
+    'London' : 'England',
+    'Mumbai' : 'India',
+    'Lausanne' : 'Switzerland',
+    'Estes Park' : 'Colorado'
+  }
+
+
+def key_position(d, k):
+  keys = list(d.keys())
+
+  if k in keys:
+    return keys.index(k)
+  else:
+    return 'Key not found'
+
+print(key_position(cities, 'Boston'))
+
+###############
