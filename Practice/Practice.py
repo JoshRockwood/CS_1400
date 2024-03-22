@@ -201,3 +201,115 @@ def key_position(d, k):
 print(key_position(cities, 'Boston'))
 
 ###############
+
+if __name__ == "__main__":
+  example_dict = {
+    1 : ['red', 'blue', 'green'],
+    'Josh Jung' : (9, 10),
+    3 : {0 : 0},
+    9000 : 'impale mat a'
+  }
+
+def find_key(d, v):
+  keys = list(d.keys())
+  values = list(d.values())
+  index = values.index(v)
+  return keys[index]
+
+key = find_key(example_dict, v)
+print(key)
+
+###############
+
+if __name__ == "__main__":
+  example_dict = {
+    1 : 'one',
+    2 : 'two',
+    3 : 'three'
+  }
+
+def move_to_bottom(d, k):
+  if k not in d:
+    return 'The key is not in the dictionary'
+  else:
+    value = d.pop(k)
+    d[k] = value
+    return d
+
+print(move_to_bottom(example_dict, 4))
+
+###############
+
+if __name__ == "__main__":
+    example_dict = {
+        1: 'one',
+        2: 'two',
+        3: (4, 5)
+    }
+
+
+def swap(d):
+    keys = d.keys()
+    values = d.values()
+    swapped_tuples = zip(values, keys)
+    value_types = [type(elem) for elem in values]
+
+    if type({}) in value_types or type([]) in value_types:
+        return 'Cannot swap the keys and values for this dictionary'
+    else:
+        new_dict = dict(swapped_tuples)
+        return new_dict
+
+
+swapped = swap(example_dict)
+print(swapped)
+
+###############
+
+if __name__ == "__main__":
+  example_dict = {
+    1 : 'one',
+    2 : 'two',
+    3 : [4, 5]
+  }
+
+def is_nested(d):
+  values = d.values()
+  value_types = [type(elem) for elem in values]
+  if type(()) in value_types or type([]) in value_types or type({}) in value_types:
+    return True
+  else:
+    return False
+
+print(is_nested(example_dict))
+
+###############
+
+if __name__ == "__main__":
+    import sys
+    import json
+
+    file1 = sys.argv[1]
+    file2 = sys.argv[2]
+
+
+def compare(f1, f2):
+    with open(f1) as file1, open(f2) as file2:
+        data1 = json.load(file1)
+        data2 = json.load(file2)
+        if data1 == data2:
+            return 'The dictionaries are equal'
+        else:
+            count1 = len(data1)
+            count2 = len(data2)
+            if count1 > count2:
+                return 'Dictionary 1 is longer than dictionary 2'
+            elif count2 > count1:
+                return 'Dictionary 2 is longer than dictionary 1'
+            else:
+                return 'Dictionary 1 and dictionary 2 have the same length'
+
+
+print(compare(file1, file2))
+
+###############
